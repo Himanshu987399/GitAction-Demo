@@ -139,7 +139,7 @@ jobs:
 
             # Authenticate to org using the URL stored in the text file
             - name: 'Authenticate to Integration Org'
-              run: sfdx auth:jwt:grant -u=adarsha7@gmail.com  -f=salesforce.key -i=${{ vars.SF_CLIENT_ID_DEV }} -r=${{vars.HUB_LOGIN_URL}}
+              run: sfdx auth:jwt:grant -u=${{ vars.SF_USERNAME }}  -f=${{ vars.SALESFORCE_JWT_SECRET_KEY }} -i=${{ vars.SF_CLIENT_ID }} -r=${{vars.HUB_LOGIN_URL}}
 
             # We use SFDX Git Delta to create a directory with only the metadata that has changed.
             # this allows us to deploy only those changes, as opposed to deploying the entire branch. 
