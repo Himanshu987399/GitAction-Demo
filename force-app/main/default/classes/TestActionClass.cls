@@ -1,7 +1,7 @@
 public with sharing class TestActionClass {
     public TestActionClass() {
 
-        system.debug('tes\\\\\\ted123');
+        system.debug('tested123');
 
     }
 }
