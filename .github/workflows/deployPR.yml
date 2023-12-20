@@ -130,13 +130,13 @@ jobs:
               if: ${{ env.APEX_TESTS != 'all' }}
               run: |
                   echo ${{env.APEX_TESTS}}
-                  sfdx force:source:deploy -d "changed-sources/force-app" --testlevel RunSpecifiedTests --runtests ${{env.APEX_TESTS}} --json -u=${{ vars.SF_USERNAME }}
+                  sfdx force:source:deploy -d "changed-sources/force-app" -u=${{ vars.SF_USERNAME }}
                   
 
             # If the env variable equals all, we run all tests
             - name: 'deploy delta changes - No run tests'
               if: ${{ env.APEX_TESTS == 'all' }}
               run: |
-                  sfdx force:source:deploy -d "changed-sources/force-app" --testlevel NoTestRun  --json -u=${{ vars.SF_USERNAME }}
+                  sfdx force:source:deploy -d "changed-sources/force-app" -u=${{ vars.SF_USERNAME }}
 
             
